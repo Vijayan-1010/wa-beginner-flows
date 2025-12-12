@@ -5,9 +5,12 @@ from random import randint
 def unstable_task():
     n = randint(1, 10)
     if n <= 7:
-    raise Exception("Random failure!")
+        raise Exception("Random failure!")
     print("Success on attempt")
 
 @flow
 def retry_example():
     unstable_task()
+
+if __name__ == "__main__":
+    retry_example()
